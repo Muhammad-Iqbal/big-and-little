@@ -1,0 +1,50 @@
+p::before,
+p::after{
+    display: inline-block;
+    content:attr(data-letter);
+    color:hsl(183,100%,50%);
+    transition: 370ms ease-in-out;
+    transition-property: opacity,transform;
+
+}
+
+p::before{
+    text-transform: uppercase;
+    color: hsl(353,100%,50%);
+    transform: translate(50%);
+    opacity: .6;
+}
+
+p::after{
+    transform: translateX(-50%);
+    opacity: .4;
+}
+
+p{
+    margin: 0em .25em;
+    line-height: 1;
+    height: 1em;
+}
+
+p:hover::before,
+p:hover::after{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 15vmin;
+    font-family: system-ui,-apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    background: hsl(53, 100%, 88%);
+    padding: .5em .025em;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
